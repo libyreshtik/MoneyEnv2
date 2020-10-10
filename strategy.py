@@ -10,7 +10,19 @@ class Automatic_BaseStrategy(BaseStrategy):
     def __init__(self, envelopes):
         super().__init__(envelopes)
         self.envelopes = envelopes
+    
+    def play(self):
+        num = random.randrange(100)
+        envelope = self.envelopes[num]
+        print(envelope.display())
 
+    def display(self):
+        """
+        display what this strategy is doing
+        :return description:
+        """
+        return "Automatic BaseStrategey - take random envelope from the list of envelopes \n " \
+               "and print how much money was in the envelope and that's how much you've got."
 
 class N_max_strategy(BaseStrategy):
     def __init__(self, envelopes):
